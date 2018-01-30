@@ -8,7 +8,7 @@ let count = 0;
 let itemArray = [];
 
 function addItem() {
-    itemArray.push({
+    addItemToArray({
         name: '',
         hour: 0,
         minutes: 0
@@ -23,7 +23,7 @@ function addItem() {
             placeholder="Hour"
             onkeyup="editValue(event)"
         />
-        <input type="number" id="inputSeconds-${count}" 
+        <input type="number" id="inputMinutes-${count}" 
             placeholder="Minutes"
             disabled
         />
@@ -43,7 +43,7 @@ function editValue(e) {
         case "inputHr":
             itemArray[index].hour = value;
             itemArray[index].minutes = value * 60;
-            $(`#inputSeconds-${index}`).val(value * 60);
+            $(`#inputMinutes-${index}`).val(value * 60);
             break;
         default:
             break;
